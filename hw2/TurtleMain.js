@@ -5,11 +5,11 @@ const log = console.log;
 class Turtle {
  
     constructor (x=0, y=0, dir = 1, mapW = 10, mapH = 10){
-        if ( (x > mapW -1 ) || (y > mapH -1) ) {
-            console.error ("dimension error, try again");
+        if ( (x > mapW -1 ) || (y > mapH -1) || mapW < 1 || mapH < 1 || x < 0 || y<0 ) {
+            console.error ("invalid turtle position or map dimensions,, try again");
             return;
         }
-        this.dir    = dir;
+        this.dir    = (( dir % 4 ) + 4 ) % 4;  /// directions are modulo 4
         this.x      = x;
         this.y      = y;
         this.mapW   = mapW;
@@ -47,7 +47,6 @@ class Turtle {
                     this.goNorth(n);
                     return this;    
                     break;
-    
                 default:
                 console.error('forward switch fall-through');
                 return this;

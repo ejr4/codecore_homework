@@ -6,29 +6,31 @@
 function stringToTurtleArr (str) {
     return str.split('-');
 }
-
+let Tom = new Turtle();
 function arrToTurtleExec (arr) {
-    let execArr = [];
+    //let execArr = [];
+    // const Tom = new Array();
     for (element of arr) {     
         switch (element[0]) { //based on first letter
             case 't':
-            execArr.push( `const Tom = new Turtle(${element[1]},${element[3]})`);
-            //log('t case')
+            Tom.x = element[1];
+            Tom.y = element[3];
+            log('t case')
             break;
             case 'f':
-            execArr.push(`Tom.forward( ${ parseInt(element.substring(1)) })`);
-            break;
-            case 'r':
-            execArr.push(`Tom.right()`);
-            break;
-            case 'l':
-            execArr.push(`Tom.left()`);
-            break;
+            Tom.forward(element[1]);
+            // break;
+            // case 'r':
+            // execArr.push(`Tom.right()`);
+            // break;
+            // case 'l':
+            // execArr.push(`Tom.left()`);
+            // break;
             default:
-            console.error('fall-through alert');
+            // console.error('fall-through alert');
         }
     }
-    return execArr;
+    return;
 
 }
 
