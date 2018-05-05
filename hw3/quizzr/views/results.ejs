@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>R E S U L T S</title>
+    <link rel='stylesheet' href='/stylesheets/style.css' />
+  </head>
+  <body>
+    <h1>R E S U L T S</h1>
+
+
+    <form action = "/" method = "get">
+    
+    <% let correct_count = 0 %>
+    <% for ( let i in quizObj ) { %>
+      <fieldset>
+        <h3><%= quizObj[i]["question"] %></h3>
+        <h3>You answered: </h3>
+        <h2><%= quizObj[i]["choices"][client_ans_obj[i]] %></br></h2>
+        
+        <% if (client_ans_obj[i] == quizObj[i]["answerIndex"]) {%>
+          <% correct_count++ %>
+          <h3><font color="green">Correct!</font></h3></br>
+          
+        <% } else { %>
+          <h3><font color="red">Incorrect.</font>  The correct answer is</h3>
+          <h2><%= quizObj[i]["choices"][quizObj[i]["answerIndex"]] %></h2>
+        <% } %>
+      </fieldset>
+    
+    <% } %>
+
+    <h2>You answered <%= correct_count %> / 5 questions correctly.</h2>
+
+      <input type="submit" value = "Go Back"> 
+    </form>
+
+  </body>
+</html>
+
+
+
+

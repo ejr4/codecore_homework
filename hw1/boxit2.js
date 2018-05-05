@@ -1,7 +1,8 @@
 // this is the first week's homework assignment
 // any number of string arguments taken from command line will be returned in boxes
-//
+
 let log = console.log;
+
 let args =process.argv.slice(2);
 
 ///// unicode for this program 

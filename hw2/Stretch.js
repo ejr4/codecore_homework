@@ -1,6 +1,9 @@
-// This file contains a class Turtle which includes a variable size grid and chainable commands to move a turtle within the grid, displaying its path.
-// the constructor can take in : initial x,y position, initial direction, and map size
-// N-E-S-W = 0 - 1 - 2 - 3
+/// codecore homework 2 stretch.
+/// use:  `node stretch.js 'T4,5-f3-r-f5-l-f6-r-f5-l'`   for example.
+// almost there: april 27
+const args = process.argv.slice(2);
+const instructionString = args[0];
+
 const log = console.log;
 class Turtle {
  
@@ -108,3 +111,37 @@ function mapPrint(arr) {
     }
     return outStr;
 }
+
+
+function stringToTurtle (instructionString) {
+    let instructionArr = instructionString.split('-');
+
+    let Tom = new Turtle();
+        for (element of instructionArr) {     
+        switch (element[0]) { //based on first letter
+            case 'T':
+            Tom.x = parseInt(element[1]);
+            Tom.y = parseInt(element[3]);
+            log(parseInt(element[1]));
+            log('t case');
+            break;
+            case 'f':
+            log(parseInt(element[1]));
+            Tom.forward( (element.length > 1) ? parseInt(element[1]) : 0 );
+            break;
+            case 'r':
+            Tom.right();
+            break;
+            case 'l':
+            Tom.left();
+            break;
+            default:
+            console.error('fall-through alert');
+        }
+    }
+    Tom.print();
+    return;
+
+}
+
+stringToTurtle(instructionString);
