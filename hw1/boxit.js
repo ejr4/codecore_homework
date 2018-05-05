@@ -61,18 +61,4 @@ let leftT       = "\u2523";
 let rightT      = "\u252b";
 let vert        = "\u2503";
 
-console.log(boxit(args));  /// print output //   END
 
-
-///////////  the above was submitted
-
-
-var fs = require('fs');
-var exec = require('child_process').exec;
-
-// the following at  
-fs.readFile('./got.csv', 'utf8', function(oErr, sText) {
-    console.log(sText);
-});
-
-fs.readFile(`./${args}`)
