@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Q U I Z</title>
+    <link rel='stylesheet' href='/stylesheets/style.css' />
+  </head>
+  <body>
+    <h1>Q U I Z</h1>
+
+    <form action = "/quiz/results" method = "post">
+    
+      <% for ( let i in quizObj ) { %>
+
+      <fieldset>
+        <legend><%= quizObj[i]["question"] %></legend>
+
+        <% for ( let j in quizObj[i]["choices"] ) { %>
+
+          <input type="radio" id="<%= i %>" name = "<%= i %>" value = "<%= j %>">
+          <label for="radio"> <%= quizObj[i]["choices"][j]%></label>
+        <% } %>
+      </fieldset>
+      
+      <% } %>
+
+        <input type="submit" value = "Submit Answers"> 
+    </form>
+  </body>
+</html>
+
+
+
+

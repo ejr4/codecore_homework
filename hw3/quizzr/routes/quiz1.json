@@ -1,0 +1,27 @@
+[
+    {
+      "question": "What does `[] == 0` return?",
+      "choices": ["true", "false"],
+      "answerIndex": 0
+    },
+    {
+      "question": "What was the original name of JavaScript?",
+      "choices": ["Java", "Mocha", "LiveScript", "ECMAScript"],
+      "answerIndex": 2
+    },
+    {
+      "question": "What does `NaN === NaN` return?",
+      "choices": ["true", "false"],
+      "answerIndex": 1
+    },
+    {
+      "question": "What does `let a = {}, b = {}; a == b` return?",
+      "choices": ["true", "false"],
+      "answerIndex": 1
+    },
+    {
+      "question": "What does `let a = {}; a == `[object Object]` return?",
+      "choices": ["true", "false"],
+      "answerIndex": 0
+    }
+  ]

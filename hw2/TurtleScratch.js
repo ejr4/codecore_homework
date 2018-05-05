@@ -3,37 +3,40 @@
 /// as of April 26, declarations such as 'new Turtle...' do not work within the context used, such as with 'eval'.     e.g.  "Tom is not defined"
 
 
-function stringToTurtleArr (str) {
-    return str.split('-');
-}
-let Tom = new Turtle();
-function arrToTurtleExec (arr) {
-    //let execArr = [];
-    // const Tom = new Array();
-    for (element of arr) {     
+const instructionString = process.argv.slice(2);
+console.log(instructionString);
+
+function arrToTurtleExec (instructionString) {
+    let instructionArr = instructionString.split('-');
+
+    let Tom = new Turtle();
+        for (element of arr) {     
         switch (element[0]) { //based on first letter
             case 't':
-            Tom.x = element[1];
-            Tom.y = element[3];
-            log('t case')
+            Tom.x = parseInt(element[1]);
+            Tom.y = parseInt(element[3]);
+            log(parseInt(element[1]));
+            log('t case');
             break;
             case 'f':
-            Tom.forward(element[1]);
-            // break;
-            // case 'r':
-            // execArr.push(`Tom.right()`);
-            // break;
-            // case 'l':
-            // execArr.push(`Tom.left()`);
-            // break;
+            log(parseInt(element[1]));
+            Tom.forward(parseInt(element[1]));
+            break;
+            case 'r':
+            Tom.right();
+            break;
+            case 'l':
+            Tom.left();
+            break;
             default:
-            // console.error('fall-through alert');
+            console.error('fall-through alert');
         }
     }
+    Tom.print();
     return;
 
 }
 
-let t1 = `t5,5-f10-r-f5`;
-let t2 = stringToTurtleArr(t1);
-let t3 = arrToTurtleExec(t2);
+// let t1 = `t5,5-f10-r-f5`;
+// let t2 = stringToTurtleArr(t1);
+// arrToTurtleExec(t2);

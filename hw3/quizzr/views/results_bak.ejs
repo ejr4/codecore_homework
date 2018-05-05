@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>R E S U L T S</title>
+    <link rel='stylesheet' href='/stylesheets/style.css' />
+  </head>
+  <body>
+    <h1>R E S U L T S</h1>
+
+    <form action = "/results" method = "post">
+    
+    <% for ( let i in quizObj ) { %>
+
+    <fieldset>
+      <legend>YOUR ANSWER --<%= quizObj[i]["question"] %></legend>
+
+      <% for ( let j in quizObj[i]["choices"] ) { %>
+
+        <input type = "radio"  id="<%= i %>" name = "<%= i %>" >
+        <label for="radio"> <%= quizObj[i]["choices"][j]%></label>
+      <% } %>
+    </fieldset>
+
+    <fieldset>
+      <legend>CORRECT ANSWER<%= quizObj[i]["question"] %></legend>
+
+      <% for ( let j in quizObj[i]["choices"] ) { %>
+
+        <input type = "radio" disabled="<%= quizObj[i]["answerIndex"]== j ? true : false %>" id="<%= i %>" name = "<%= i %>" >
+        <label for="radio"> <%= quizObj[i]["choices"][j]%></label>
+      <% } %>
+    </fieldset>
+    
+    <% } %>
+
+
+
+      <input type="submit" value = "Submit Answers"> 
+    </form>
+  
+
+  
+
+  </body>
+</html>
+
+
+
+

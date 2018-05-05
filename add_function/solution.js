@@ -7,3 +7,7 @@ function add(a,b){
 
 console.log("====add====");
 console.log(add(2,2));
+
+function colorNest(a,b){
+    return ((a+b)*((a/b)/4))
+}
