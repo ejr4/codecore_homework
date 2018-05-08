@@ -1,0 +1,33 @@
+{
+  "name": "cluck2",
+  "version": "0.0.2",
+  "description": "a simple poultry based twitter clone",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "DEBUG=express:* nodemon app.js"
+  },
+  "keywords": [
+    "cluck",
+    "chicken",
+    "rooster",
+    "egg"
+  ],
+  "author": "Eric Rinne",
+  "license": "ISC",
+  "dependencies": {
+    "body-parser": "^1.18.2",
+    "bootstrap": "^4.1.1",
+    "cookie-parser": "^1.4.3",
+    "ejs": "^2.6.1",
+    "express": "^4.16.3",
+    "jquery": "^3.3.1",
+    "knex": "^0.14.6",
+    "morgan": "^1.9.0",
+    "pg": "^7.4.3",
+    "popper.js": "^1.14.3"
+  },
+  "devDependencies": {
+    "nodemon": "^1.17.4"
+  }
+}
