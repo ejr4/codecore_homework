@@ -5,7 +5,9 @@
   "main": "app.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "DEBUG=express:* nodemon app.js"
+    "start": "DEBUG=express:* nodemon app.js",
+    "db:create": "createdb --echo cluckr_dev",
+    "db:drop": "dropdb --echo cluckr_dev"
   },
   "keywords": [
     "cluck",

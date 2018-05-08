@@ -12,6 +12,9 @@ const knex = require("../db");
 router.get('/', function(req, res, next) {
     res.render('new_cluck', { title: 'Cluckr' });
   });
+// posting new cluck results in 404 in all attempted cases
+
+//  DEBUG effort 1
 
 // router.post("/", (req, res, next) => {
 //     knex.insert({
@@ -30,6 +33,23 @@ router.get('/', function(req, res, next) {
 //             next(err);
 //         });
 // });
+
+/// DEBUG 2
+// router.post("/", (req, res, next) => {
+    
+//             console.log('created', created_cluck);
+
+//             //res.redirect(`/${created_cluck.id}`);
+//             res.render('index',{ title: 'Cluckr' });
+//         });
+
+//DEBUG 3
+
+router.post("/", (req, res) => {
+    
+    res.render('index',{ title: 'Cluckr' });
+    });        
+
 
 router.get("/:id", (req, res, next) => {
 
@@ -54,18 +74,6 @@ router.get("/:id", (req, res, next) => {
 			console.log(err);
 		});
 });
-/// FAKE DEBUG POST TO FIX ROUTING
-// router.post("/", (req, res, next) => {
-    
-//             console.log('created', created_cluck);
-
-//             //res.redirect(`/${created_cluck.id}`);
-//             res.render('index',{ title: 'Cluckr' });
-//         });
-router.post("/", (req, res) => {
-    
-    res.render('spindex',{ title: 'Cluckr' });
-    });        
 
 
 
