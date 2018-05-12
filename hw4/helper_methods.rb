@@ -1,4 +1,5 @@
 module HelperMethods
+
     def titleize string 
         word_array = string.split(' ')
     
@@ -14,8 +15,6 @@ module HelperMethods
     end
 end
 
-#excluded words: 
-#in, the, of, and, or, from. T
 
 class ExtendingClass
     extend HelperMethods
