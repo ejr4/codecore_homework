@@ -1,0 +1,83 @@
+<div>
+<h1><%= @post.title %></h1>
+<p><%= @post.body %></p>
+</div>
+<div>
+<small>
+    Posted <%= time_ago_in_words(@post.created_at) %> ago
+  </small>
+  •
+  <small>
+    Last edited <%= time_ago_in_words(@post.updated_at) %> ago
+  </small>
+</div>
+  <div>
+    <small><%= link_to "Edit", edit_post_path(@post) %></small>
+
+    <small>
+      <%= link_to(
+        "Delete",
+        post_path(@post),
+        method: :delete,
+        data: {
+          confirm: "Are you sure?"
+        }
+      ) %>
+    </small>
+</div>
+
+<h2>Comments</h2>
+
+<%#
+  To tell form_for that we're creating an comment for a post,
+  use an array where the first element is the post and
+  the second element is the new comment.
+%>
+
+<%= form_for [@post, @comment] do |f| %>
+  <% if @comment.errors.present? %>
+    <p>
+      <%= @comment.errors.full_messages.join(', ') %>
+    </p>
+  <% end %>
+
+  <div>
+    <%= f.text_area(
+      :body,
+      cols: 60,
+      rows: 6,
+      placeholder: "What are your thoughts?"
+    ) %>
+  </div>
+  <%= f.submit "Submit" %>
+<% end %>
+
+<div class="comment-list">
+  <% @comments.each do |comment| %>
+    <div>
+      
+      
+      <p>
+        <%= comment.body %> <br />
+       
+          <small>
+            <%= link_to(
+              "Delete",
+              post_comment_path(@post.id, comment.id),
+              method: :delete,
+              data: {
+                confirm: "Are you sure?"
+              }
+            ) %>
+          </small>
+          •
+        
+        <small>
+          Posted <%= time_ago_in_words(comment.created_at) %> ago
+        </small>
+        •
+        
+      </p>
+    </div>
+  <% end %>
+</div>

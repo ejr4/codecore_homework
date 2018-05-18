@@ -1,0 +1,16 @@
+<h1>Here be blog-on-rails: a new beginning!</h1>
+
+<ul>
+  <% @posts.each do |post| %>
+    <div>
+    <li>
+    <%= link_to post.title, post_path(post) %> <br/>
+    <%= post.body %>
+    </br>
+      <small>
+        Posted <%= time_ago_in_words(post.created_at) %> ago
+      </small>
+    </li>
+    </div>
+  <% end %>
+</ul>
