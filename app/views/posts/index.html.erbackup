@@ -1,14 +1,13 @@
-<div class="flex-box flex-wrap" >
-<h1>task for tmr: try 'h-20 inline block' div. peace </h1>  
-  <div class="row h-20"> 
-  <div class="card-column"
+<div class="container" style="height:20">
+  <div class="row h-20">
+  <div class="col-4">
   <% @posts.each do |post| %>
     
-      <div class="card" >
+      <div class="card" style="width: 18rem;">
         <div class="card-body">
-          <h3 class="card-title text-truncate"> 
+          <h2 class="card-title text-truncate"> 
             <%= link_to post.title, post_path(post) %> 
-          </h3>
+          </h2>
           <br/>
           <p class="card-subtitle text-muted text-truncate">
             <%= post.body %>
@@ -19,8 +18,10 @@
           </small>
         
         </div> 
-    </div>   
+      </div>   
+    </div>
   <% end %>
+
   </div>
- 
+  </div>
 </div>
