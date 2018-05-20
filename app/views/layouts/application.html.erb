@@ -11,14 +11,16 @@
 
   <body>
  <nav class="navbar navbar-light bg-light">
-    <a class="navbar-brand" href="/">Blog-on-Rails</a>
+    <a class="navbar-brand text-primary" style="font-size: 2rem" href="/">Blog-on-Rails</a>
     <span>
-    <%= link_to 'Home', root_path %>
+    
+    <%= link_to "Home ", root_path, {:style=>"font-size: 1.5rem"} %>
     <%#= link_to 'Home', root_url %>
     
     <!-- <a href='/about_us'>About Us</a> -->
     
-    <%= link_to 'New Post', new_post_path %>
+    <%= link_to " New Post", new_post_path, {:style=>"font-size: 1.5rem"}  %>
+    
     </span>
     </nav>
     

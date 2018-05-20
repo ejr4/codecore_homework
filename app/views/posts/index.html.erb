@@ -1,12 +1,13 @@
+
 <div class="flex-box flex-wrap">
  
   
-  <div style="height: 20vwh">
-      <div class="card-deck" >
+  
+      <div class="card-deck mt-4" style=" margin-left: 15px" >
         
   <% @posts.each do |post| %>
           <div class="card-col-4" >
-          <div class="card" style="width: 33rem"> 
+          <div class="card" style="margin-bottom: 15px; width: 33rem"> 
               <h3 class="card-title text-truncate"> 
                 <%= link_to post.title, post_path(post) %> 
               </h3>
@@ -23,7 +24,7 @@
         
   <% end %>
       </div> 
-  </div>   
+  
 </div>   
   
  
