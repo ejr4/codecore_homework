@@ -1,26 +1,33 @@
-<div class="flex-box flex-wrap" >
+<div class="flex-box flex-wrap">
  
-  <div class="row h-20"> 
-  <div class="card-column"
-  <% @posts.each do |post| %>
-    
-      <div class="card" >
-        <div class="card-body">
-          <h3 class="card-title text-truncate"> 
-            <%= link_to post.title, post_path(post) %> 
-          </h3>
-          <br/>
-          <p class="card-subtitle text-muted text-truncate">
-            <%= post.body %>
-          </p>
-          </br>
-          <small>
-            Posted <%= time_ago_in_words(post.created_at) %> ago
-          </small>
+  
+  <div style="height: 20vwh">
+      <div class="card-deck" >
         
-        </div> 
-    </div>   
+  <% @posts.each do |post| %>
+          <div class="card-col-4" >
+          <div class="card" style="width: 33rem"> 
+              <h3 class="card-title text-truncate"> 
+                <%= link_to post.title, post_path(post) %> 
+              </h3>
+              <br/>
+              <h4 class="card-subtitle text-muted text-truncate">
+                <%= post.body %>
+              </h4>
+              </br>
+              <small>
+                Posted <%= time_ago_in_words(post.created_at) %> ago
+              </small>
+          </div>    
+          </div> 
+        
   <% end %>
-  </div>
+      </div> 
+  </div>   
+</div>   
+  
  
-</div>
+
+
+
+
