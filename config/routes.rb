@@ -4,7 +4,9 @@ Rails.application.routes.draw do
   resources :posts do
     resources :comments, only: [:create, :destroy]
   end
-
+  
+  resource :session, only: [:new, :create, :destroy]
+  resources :users, only: [:new, :create]
 
   #from amazon-app:
   get('/', {to: 'posts#index', as: 'root'})
