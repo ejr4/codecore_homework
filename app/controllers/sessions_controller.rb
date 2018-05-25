@@ -8,7 +8,7 @@ class SessionsController < ApplicationController
       if user&.authenticate(params[:session][:password])
         session[:user_id] = user.id
   
-        flash[:notice] = "Thanks for signing in, #{user.first_name}!"
+        flash[:notice] = "Thanks for signing in, #{user.name}!"
         redirect_to root_path
       else
         flash[:alert] = "Invalid email or password!"
@@ -22,6 +22,6 @@ class SessionsController < ApplicationController
       flash[:notice] = "Successfully signed out!"
       redirect_to root_path
     end
-  end
+  
   
 end

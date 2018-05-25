@@ -15,12 +15,28 @@
     <span>
     
     <%= link_to "Home ", root_path, {:style=>"font-size: 1.5rem"} %>
-    <%#= link_to 'Home', root_url %>
-    
-    <!-- <a href='/about_us'>About Us</a> -->
+   
     
     <%= link_to " New Post", new_post_path, {:style=>"font-size: 1.5rem"}  %>
-    
+
+    <% if user_signed_in? %>
+      <span>Hello, <%= current_user.name %>!</span>
+      <%= link_to 'Change Password', edit_user_path(current_user), {:style=>"font-size: 1.5rem"} %>
+      <%= link_to(
+        'Sign Out',
+        session_path,
+        method: :delete,
+        # {:style=>"font-size: 1.5rem"}
+      ) %>
+    <% else %>
+      <%= link_to 'Sign In', new_session_path, {:style=>"font-size: 1.5rem"} %>
+     
+      <%= link_to 'Sign Up', new_user_path, {:style=>"font-size: 1.5rem"} %>
+    <% end %>
+
+
+
+
     </span>
     </nav>
     

@@ -1,5 +1,7 @@
 class PostsController < ApplicationController
+    before_action :authenticate_user!, except: [:show, :index]
     before_action :post_find, only: [:show, :edit, :update, :destroy]
+    before_action :authorize_user!, only: [:edit, :update, :destroy]
     def index
         @posts = Post.all.order(created_at: :desc)
     end
@@ -43,5 +45,11 @@ class PostsController < ApplicationController
     end
     def post_find
         @post = Post.find(params[:id])
+    end
+    def authorize_user!
+        unless can?(:manage, @post)
+            flash[:alert] = "Permission denied"
+            redirect_to post_path(@post)
+        end
     end
 end
