@@ -7,17 +7,19 @@ class UsersController < ApplicationController
     end
     def update
         # byebug
-        if (new_password != new_password_confirmation)
+        if !@user.authenticate current_password
+            flash[:alert] = "current password is wrong"
+            render :edit
+        
+        elsif (new_password != new_password_confirmation)
             flash[:alert] = "passwords must match"
             render :edit
+        
+        elsif @user.update(:password => new_password)
+            redirect_to root_path
         else
-            if @user.update(:password => new_password)
-                redirect_to root_path
-            else
-                render :edit
-            end
-        end 
-
+            render :edit
+        end
     end
     def create
         @user = User.new user_params
@@ -45,7 +47,10 @@ class UsersController < ApplicationController
       def new_password
         params[:user][:new_password]
       end
-        def new_password_confirmation 
+      def new_password_confirmation 
             params[:user][:new_password_confirmation]
+      end
+      def current_password 
+            params[:user][:current_password]
       end
 end

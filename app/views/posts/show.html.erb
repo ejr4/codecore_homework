@@ -4,7 +4,7 @@
 </div>
 <div>
 <small>
-    Posted <%= time_ago_in_words(@post.created_at) %> ago
+    Posted <%= time_ago_in_words(@post.created_at) %> ago by  <%= @post.user&.name || "[DELETED]" %>
   </small>
   •
   <small>
@@ -73,9 +73,9 @@
           •
         
         <small>
-          Posted <%= time_ago_in_words(comment.created_at) %> ago
+          Posted <%= time_ago_in_words(comment.created_at) %> ago by <%= comment.user&.name || "[DELETED]" %>
         </small>
-        •
+        
         
       </p>
     </div>

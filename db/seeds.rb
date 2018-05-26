@@ -28,13 +28,15 @@ Comment.destroy_all
 50.times.each do
     post =Post.create(
         title: Faker::HitchhikersGuideToTheGalaxy.specie, 
-        body: Faker::HitchhikersGuideToTheGalaxy.quote
+        body: Faker::HitchhikersGuideToTheGalaxy.quote,
+        user: users.sample
     )
     if post.valid?
         rand(0..7).times.each do
             comment = Comment.create(
             body: Faker::Dune.quote,
-            post: post 
+            post: post, 
+            user: users.sample
             )
         end
     end
