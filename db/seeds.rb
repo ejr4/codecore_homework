@@ -18,7 +18,7 @@ Comment.destroy_all
   
     User.create(
       name: name,
-      email: "#{name.downcase}.@nasa.gov",
+      email: "#{name.downcase}@nasa.gov",
       password: PASSWORD
     )
   end
