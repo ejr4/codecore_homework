@@ -1,5 +1,7 @@
-let you_win_html = `<h1>You win!!</h1>`;
-let you_lose_html = `<h1>You lose!!</h1>`;
+let snake_snd = new Audio("assets/snakehiss.wav"); // buffers automatically when created
+
+//let relief_snd = new Audio("assets/file.save")
+
 let wrong_guesses = 0;
 let alph = [];
 let a_offset = 'a'.charCodeAt(0);
@@ -18,6 +20,7 @@ for (let i=0; i < alpha_keys.length; i++) {
   html[html.length] =
   `<button id=${this_letter} class="button">`+this_letter+`</button>`;
   $("#alpha-keys-div").append(html[i]);
+  
   $(`#${this_letter}`).on("click", event => {
     const { currentTarget } = event;    
     $(currentTarget).addClass("button-blue");
@@ -26,7 +29,8 @@ for (let i=0; i < alpha_keys.length; i++) {
       wrong_guesses ++;
       $("#hanging-man-display").html(
         `<img src="assets/pic${wrong_guesses}.png"></img>`
-      )
+      );
+      snake_snd.play();
     }
     else {
     these_nodes.forEach( node => {
@@ -35,10 +39,15 @@ for (let i=0; i < alpha_keys.length; i++) {
     });
     }
     if (document.querySelectorAll(".button-blank").length == 0){
-      $("#alpha-keys-div").append(you_win_html);
+      alert("You live!!");
+      document.location.reload();
     }
-    if (wrong_guesses >= 6) {
-      $("#alpha-keys-div").append(you_lose_html);
+    if (wrong_guesses > 6) {
+      alert("You will die for guessing such silly letters!");
+        
+      document.location.reload();
+      
+      
     }
   });
 }
