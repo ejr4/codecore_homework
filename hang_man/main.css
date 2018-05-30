@@ -1,3 +1,7 @@
+* {
+    font-family: monospace;
+}
+
 .button {
     font-size: 20px;
     border-radius: 5px;
@@ -13,13 +17,21 @@
     font-size: 30px;
     border-radius: 5px;
     cursor: pointer;
+    text-decoration-color: cornsilk;
     background-color: rgb(241, 131, 121);
+    border-bottom: 3px solid black;
+    box-shadow: 0 8px 16px 0 rgba(0,0,0,1.0), 0 6px 20px 0 rgba(0,0,0,0.19);
   }
   .button-blank {
     font-size: 30px;
-    visibility: hidden;
+    
     border-radius: 5px;
     cursor: pointer;
-    background-color: white;
+    background-color: rgb(0, 0, 0);
+    border-bottom: 3px solid black;
+    box-shadow: 0 8px 16px 0 rgba(0,0,0,1.0), 0 6px 20px 0 rgba(0,0,0,0.19);
   }
+  .button-holder-div {
+    box-shadow: 0 8px 16px 0 rgba(0,0,0,1.0), 0 6px 20px 0 rgba(0,0,0,0.19);
+    width: 40px;
   }
