@@ -9,3 +9,17 @@
     cursor: pointer;
     background-color: aquamarine;
   }
+  .button-red {
+    font-size: 30px;
+    border-radius: 5px;
+    cursor: pointer;
+    background-color: rgb(241, 131, 121);
+  }
+  .button-blank {
+    font-size: 30px;
+    visibility: hidden;
+    border-radius: 5px;
+    cursor: pointer;
+    background-color: white;
+  }
+  }
