@@ -1,3 +1,13 @@
+function restart_game() {
+  return new Promise((resolve, reject) => {
+      setTimeout(() => {
+        document.location.reload();
+        resolve();
+      }, 2000 );
+  });
+}
+
+
 $(() => {
 $(document).on("keydown", e => {
    const { currentTarget } = e;
@@ -24,12 +34,12 @@ $(document).on("keydown", e => {
 
       if (document.querySelectorAll(".button-blank").length == 0){
         alert("You live!!");
-        document.location.reload();
+        restart_game();
       }
       if (wrong_guesses > 6) {
         alert("You will die for guessing such silly letters!");
-          
-        document.location.reload();
+        restart_game();
+        //document.location.reload();
       }
 });
 

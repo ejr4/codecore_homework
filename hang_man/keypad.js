@@ -1,18 +1,11 @@
 let snake_snd = new Audio("assets/snakehiss.wav"); // buffers automatically when created
 
-//let relief_snd = new Audio("assets/file.save")
-
 let wrong_guesses = 0;
 let alph = [];
 let a_offset = 'a'.charCodeAt(0);
 for (let i = a_offset; i < a_offset+ 26; i++){
-
   alph.push( String.fromCharCode (i) ) ;
 }
-
-
-
-//let alpha_keys = ["a", "b", "c", "d", "e"];
 let alpha_keys = alph;
 let html = [];
 for (let i=0; i < alpha_keys.length; i++) {
@@ -40,16 +33,12 @@ for (let i=0; i < alpha_keys.length; i++) {
     }
     if (document.querySelectorAll(".button-blank").length == 0){
       alert("You live!!");
-      document.location.reload();
+      restart_game();
     }
     if (wrong_guesses > 6) {
       alert("You will die for guessing such silly letters!");
-        
-      document.location.reload();
-      
-      
+      restart_game();      
     }
   });
 }
 //$("#key-script-section").append(html);
-
