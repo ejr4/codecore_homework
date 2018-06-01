@@ -8,7 +8,9 @@ let wrong_snd_3 = new Audio("assets/wrong3.wav");
 function sound_fx_pepper() {
   wrong_snd_array = [wrong_snd_1, wrong_snd_2, wrong_snd_3];
   let selector = Math.floor(Math.random() * 3);
+    
     wrong_snd_array[selector].play();
+    
 }
 
 
@@ -60,7 +62,7 @@ function end_game_check() {
   }
 }
 
-$(() => {
+//$(() => {
 $(document).on("keydown", e => {
   const { currentTarget } = e;
   const { key } = e;
@@ -74,4 +76,4 @@ $(document).on("keydown", e => {
   end_game_check();
 });
 
-});
+//});

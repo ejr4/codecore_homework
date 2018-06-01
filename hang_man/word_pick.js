@@ -157,8 +157,8 @@ let letters = word.split('');
 let word_html = [];
 for (let i=0; i < letters.length; i++) {
     let this_letter = letters[i];
-  word_html[word_html.length] =
-  `<button id=b-${this_letter} class="button button-blank button-${this_letter}">`+this_letter+`</button>`;
+    word_html[word_html.length] =
+    `<button id=b-${this_letter} class="button button-blank button-${this_letter}">`+this_letter+`</button>`;
 }
 
 $("#word-display-div").append(word_html);
