@@ -1,5 +1,4 @@
-
-let word_array = [
+let hard_words = [
 'unminding',
 'internalise',
 'universally',
@@ -102,6 +101,56 @@ let word_array = [
 'taro',
 'lineable'];
 
+let animals = [
+    "aardvark",
+    "antelope",
+    "zebra",
+    "cow",
+    "horse",
+    "chicken",
+    "donkey",
+    "gorilla",
+    "sloth",
+    "reindeer",
+    "onyx",
+    "buffalo",
+    "pig",
+    "giraffe",
+    "elephant",
+    "crocodile",
+    "tiger",
+    "lion",
+    "cheetah",
+    "panther",
+    "lynx",
+    "bobcat",
+    "shark",
+    "whale",
+    "rhinoceros",
+    "hippopotamus",
+    "kangaroo",
+    "wallaby",
+    "alligator",
+    "anaconda",
+    "orangutan",
+    "baboon",
+    "chimpanzee",
+    "bonobo",
+    "camel",
+    "wolf",
+    "fox",
+    "goat",
+    "eagle",
+    "dolphin",
+    "bear",
+    "emu",
+    "monkey",
+    "tarantula",
+    "lizard",
+    "salamander",
+    "turkey"  
+];
+let word_array = animals; /// choosing animals here vs hard_words 
 let word = word_array[Math.floor(Math.random()*word_array.length)];
 
 let letters = word.split('');

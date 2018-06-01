@@ -7,10 +7,8 @@ let wrong_snd_2 = new Audio("assets/wrong2.wav");
 let wrong_snd_3 = new Audio("assets/wrong3.wav");
 function sound_fx_pepper() {
   wrong_snd_array = [wrong_snd_1, wrong_snd_2, wrong_snd_3];
-  let selector = Math.floor(Math.random() * 6);
-  if (selector%2 < 3) {
+  let selector = Math.floor(Math.random() * 3);
     wrong_snd_array[selector].play();
-  }
 }
 
 
